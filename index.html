@@ -5,6 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Train finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBnKuLu_esFYGcBlWWwjQmJWEel8UhO4Jo",
+        authDomain: "train-scheduler-hw7-95529.firebaseapp.com",
+        databaseURL: "https://train-scheduler-hw7-95529.firebaseio.com",
+        projectId: "train-scheduler-hw7-95529",
+        storageBucket: "train-scheduler-hw7-95529.appspot.com",
+        messagingSenderId: "917841135528"
+    };
+    firebase.initializeApp(config);
+    </script>
+
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -12,44 +27,66 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/animate.css" />
 </head>
 <body>
+    <nav id="navbar" class="navbar navbar-dark">
+    <span class="navbar-brand mb-0 ml-3 h1"><i class="far fa-calendar-check"></i> Train Scheduler</span>
+    </nav>
+
     <div id="jumbotron" class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Train Finder</h1>
-            <p class="lead">Let us help you find the nearest train.</p>
+            <h1 class="display-4">Where to next?</h1>
+            <br>
         </div>
     </div>    
 
     <div id="list" class="content">
         <h2>Current Train Schedule</h2>
-        <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
+        <table style="width:100%">
+                <tr>
+                  <th>Train name</th>
+                  <th>Destination</th> 
+                  <th>Frequency (min)</th>
+                  <th>Next Arrival</th>
+                  <th>Minutes Away</th>
+                </tr>
+                <tr>
+                  <td>Pineapple Express</td>
+                  <td>San Diego, CA</td> 
+                  <td>30</td>
+                  <td>10:00 PM</td>
+                  <td>10</td>
+                </tr>
+              </table>
     </div>
 
     <div id="addItem" class="content">
         <h2>Add Item</h2>
         <form>
             <div class="form-group">
-                <label for="formGroupExampleInput">Example label</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                <label for="trainNameInput">Train Name</label>
+                <input type="text" class="form-control" id="trainNameInput" value="hi">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Another label</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                <label for="destinationInput">Destination</label>
+                <input type="text" class="form-control" id="destinationInput" value="hi" >
             </div>
+            <div class="form-group">
+                <label for="timeInput">First Train Time (HH:mm - military time)</label>
+                <input type="text" class="form-control" id="timeInput" value="20:20" >
+            </div>
+            <div class="form-group">
+                <label for="frequencyInput">Frequency (min)</label>
+                <input type="text" class="form-control" id="frequencyInput" value="20">
+            </div>
+            <button id="#submitButton" type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-        
 
 
-
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script> -->
     <script src="./assets/javascript/jquery.js"></script>
     <script src="./assets/javascript/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+    <script src="./assets/javascript/moment.js"></script>
 </body>
 </html>

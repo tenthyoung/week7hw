@@ -4,7 +4,24 @@ body {
     padding: 0;
 }
 
+#navbar {
+    background-color: black;
+}
+
+#jumbotron {
+    background: url('../images/jack-anstey-383370-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-shadow: 2px 2px black;
+    color: white;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+
 .content {
     padding: 1% 5%;
-    margin: 1% 5%;
+    margin: 3% 5%;
 }
